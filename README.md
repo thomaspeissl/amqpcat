@@ -82,3 +82,4 @@ shards run
 ## Credits
 
 - [Carl Hörberg](https://github.com/carlhoerberg) - original creator https://github.com/cloudamqp/amqpcat.git
+- [Thomas Peißl](https://github.com/thomaspeissl) - developer https://github.com/thomaspeissl/amqpcat
