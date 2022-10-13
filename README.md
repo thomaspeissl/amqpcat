@@ -4,36 +4,14 @@ netcat for AMQP. CLI tool to publish to and consume from AMQP servers.
 
 ## Installation
 
-Using snap:
-
-```
-snap install amqpcat
-```
-
-Using Homebrew in OS X:
-
-```
-brew install cloudamqp/cloudamqp/amqpcat
-```
-
-Using Docker/Podman:
-
-```
-docker run -it cloudamqp/amqpcat
-```
+[Install Crystal](https://crystal-lang.org/install/).
 
 From source:
-
 ```
-brew install crystal # os x
-snap install crystal # linux/ubuntu
-
-git clone https://github.com/cloudamqp/amqpcat.git
+git clone https://github.com/thomaspeissl/amqpcat.git
 cd amqpcat
 shards build --release --production
 ```
-
-There are more [Crystal installation alternatives](https://crystal-lang.org/install/).
 
 ## Usage
 
@@ -101,14 +79,6 @@ Compile and run
 shards run
 ```
 
-## Contributing
+## Credits
 
-1. Fork it (<https://github.com/cloudamqp/amqpcat/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-## Contributors
-
-- [Carl Hörberg](https://github.com/carlhoerberg) - creator and maintainer
+- [Carl Hörberg](https://github.com/carlhoerberg) - original creator https://github.com/cloudamqp/amqpcat.git
