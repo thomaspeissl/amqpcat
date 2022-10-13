@@ -34,7 +34,7 @@ class AMQPCat
     end
   end
 
-  def consume(exchange_name : String?, routing_key : String?, queue_name : String?, format : String)
+  def consume(exchange_name : String?, routing_key : String?, queue_name : String?, format : String, consume_to_files : Bool)
     exchange_name ||= ""
     routing_key ||= ""
     queue_name ||= ""
@@ -52,7 +52,18 @@ class AMQPCat
         q.bind(exchange_name, routing_key)
       end
       q.subscribe(block: true, no_ack: true) do |msg|
-        format_output(STDOUT, format, msg)
+        if consume_to_files
+          filename = String.build do |str|
+            time = Time.utc
+            str << "consumed_"
+            str << time.to_unix_ms
+            str << ".json"
+          end
+          file = File.new(filename, "w")
+          format_output(file, format, msg)
+        else
+          format_output(STDOUT, format, msg)
+        end
       end
     rescue ex
       STDERR.puts ex.message

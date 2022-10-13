@@ -9,6 +9,7 @@ exchange_type = "direct"
 queue = nil
 routing_key = nil
 format = "%s\n"
+consume_to_files = false
 publish_confirm = false
 
 FORMAT_STRING_HELP = <<-HELP
@@ -30,6 +31,7 @@ p = OptionParser.parse do |parser|
   parser.on("-r ROUTINGKEY", "--routing-key=KEY", "Routing key when publishing") { |v| routing_key = v }
   parser.on("-q QUEUE", "--queue=QUEUE", "Queue to consume from") { |v| queue = v }
   parser.on("-c", "--publish-confirm", "Confirm publishes") { publish_confirm = true }
+  parser.on("-l", "--consume-to-files", "Save consumed messages to timestamped logfiles") { consume_to_files = true }
   parser.on("-f FORMAT", "--format=FORMAT", FORMAT_STRING_HELP) { |v| format = v }
   parser.on("-v", "--version", "Display version") { puts AMQPCat::VERSION; exit 0 }
   parser.on("-h", "--help", "Show this help message") { puts parser; exit 0 }
@@ -52,7 +54,7 @@ when :consumer
     STDERR.puts "Error: Missing routing key or queue argument."
     abort p
   end
-  cat.consume(exchange, routing_key, queue, format)
+  cat.consume(exchange, routing_key, queue, format, consume_to_files)
 else
   STDERR.puts "Error: Missing argument, --producer or --consumer required."
   abort p
