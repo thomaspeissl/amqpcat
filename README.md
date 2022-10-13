@@ -7,10 +7,12 @@ netcat for AMQP. CLI tool to publish to and consume from AMQP servers.
 [Install Crystal](https://crystal-lang.org/install/).
 
 Build from source:
-```
+```bash
 git clone https://github.com/thomaspeissl/amqpcat.git
 cd amqpcat
 shards build --release --production
+# append --static if you need static linking 
+shards build --release --production --static
 ```
 This will create a new folder called `bin` with the `amqpcat` executable.
 
