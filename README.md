@@ -45,6 +45,8 @@ Usage: amqpcat [arguments]
     -e EXCHANGE, --exchange=EXCHANGE Exchange
     -r ROUTINGKEY, --routing-key=KEY Routing key when publishing
     -q QUEUE, --queue=QUEUE          Queue to consume from
+    -c, --publish-confirm            Confirm publishes
+    -l, --consume-to-files           Save consumed messages to timestamped logfiles
     -f FORMAT, --format=FORMAT       Format string (default "%s\n")
 				     %e: Exchange name
 				     %r: Routing key
@@ -93,6 +95,11 @@ amqpcat --consumer --queue json | jq .property
 ## Development
 
 amqpcat is built with [Crystal](https://crystal-lang.org/)
+
+Compile and run
+```bash
+shards run
+```
 
 ## Contributing
 
