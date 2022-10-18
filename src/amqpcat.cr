@@ -56,6 +56,12 @@ class AMQPCat
           filename = String.build do |str|
             time = Time.utc
             str << "consumed_"
+            str << exchange_name
+            str << "_"
+            str << routing_key
+            str << "_"
+            str << queue_name
+            str << "_"
             str << time.to_unix_ms
             str << ".json"
           end
