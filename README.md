@@ -10,8 +10,10 @@ Build from source:
 ```bash
 git clone https://github.com/thomaspeissl/amqpcat.git
 cd amqpcat
+
+# compile to executable
 shards build --release --production
-# append --static if you need static linking 
+# OR append --static if you need static linking 
 shards build --release --production --static
 ```
 This will create a new folder called `bin` with the `amqpcat` executable.
