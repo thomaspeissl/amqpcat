@@ -26,7 +26,7 @@ Usage: amqpcat [arguments]
     -C, --consumer                   Consume mode, message bodies are written to STDOUT
     -u URI, --uri=URI                URI to AMQP server
     -e EXCHANGE, --exchange=EXCHANGE Exchange
-    -r ROUTINGKEY, --routing-key=KEY Routing key when publishing
+    -r ROUTINGKEY, --routing-key=KEY Routing key
     -q QUEUE, --queue=QUEUE          Queue to consume from
     -c, --publish-confirm            Confirm publishes
     -l, --consume-to-files           Save consumed messages to timestamped logfiles
