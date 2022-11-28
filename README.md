@@ -82,6 +82,9 @@ amqpcat is built with [Crystal](https://crystal-lang.org/)
 Compile and run
 ```bash
 shards run
+
+# run with command arguments
+shards run amqpcat -- args -P
 ```
 
 ## Credits
