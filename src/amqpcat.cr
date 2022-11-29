@@ -30,7 +30,7 @@ class AMQPCat
       break
     rescue ex
       STDERR.puts ex.message
-      sleep 2
+      sleep 0.1
     end
   end
 
@@ -73,7 +73,7 @@ class AMQPCat
       end
     rescue ex
       STDERR.puts ex.message
-      sleep 2
+      sleep 0.1
     end
   end
 
